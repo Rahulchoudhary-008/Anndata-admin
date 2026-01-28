@@ -1,0 +1,64 @@
+/* ==========================
+   Custom Admin Panel Styles
+========================== */
+
+body {
+  background-color: #f8f9fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.btn-sm {
+  border-radius: 20px;
+}
+
+.table {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* Sidebar (optional future) */
+.sidebar {
+  height: 100vh;
+  background-color: #343a40;
+  color: #fff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  padding: 1rem;
+}
+
+.sidebar a {
+  color: #ddd;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #495057;
+  color: #fff;
+}
+
+.main-content {
+  margin-left: 230px;
+  padding: 2rem;
+}

@@ -1,0 +1,42 @@
+<%- include('../layout', {
+  title: 'Product Form',
+  body: `
+    <div class="p-4">
+      <h3>${product._id ? 'Edit Product' : 'Add New Product'}</h3>
+      <form action="${product._id ? '/admin/products/' + product._id + '?_method=PUT' : '/admin/products'}" method="POST" class="mt-3">
+        <div class="mb-3">
+          <label>Product Name</label>
+          <input type="text" name="name" value="${product.name || ''}" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label>Description</label>
+          <textarea name="description" class="form-control">${product.description || ''}</textarea>
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label>Price (₹)</label>
+            <input type="number" name="price" value="${product.price || ''}" class="form-control" required />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label>Discount (%)</label>
+            <input type="number" name="discount" value="${product.discount || 0}" class="form-control" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label>Stock</label>
+            <input type="number" name="stock" value="${product.stock || 0}" class="form-control" />
+          </div>
+        </div>
+        <div class="mb-3">
+          <label>Category</label>
+          <input type="text" name="category" value="${product.category || ''}" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label>Tags (comma separated)</label>
+          <input type="text" name="tags" value="${product.tags ? product.tags.join(', ') : ''}" class="form-control" />
+        </div>
+        <button class="btn btn-success">${product._id ? 'Update' : 'Create'}</button>
+        <a href="/admin/products" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  `
+}) %>
