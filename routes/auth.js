@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
   const user = await User.findOne({ email });
 
   if (!user || !(await user.matchPassword(password))) {
-    return res.render('auth/login', { message: 'Invalid credentials' });
+    return res.render('auth/login', { message: 'Check email or password' });
   }
 
   req.session.user = {

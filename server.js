@@ -46,6 +46,10 @@ app.use((req, res, next) => {
 // Routes
 app.use('/', require('./routes/auth'));
 app.use('/admin', require('./routes/admin'));
+app.use('/api/auth', require('./routes/api/auth.api'))
+app.use('/api/products', require('./routes/api/product.api'))
+app.use('/api/cart', require('./routes/api/cart.api'))
+app.use('/api/order', require('./routes/api/order.api'))
 
 app.get('/', (req, res) => res.redirect('/admin'));
 
